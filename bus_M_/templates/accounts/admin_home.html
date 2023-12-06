@@ -1,0 +1,28 @@
+{%  extends 'accounts/main1.html' %}
+
+
+
+{% block content %}
+{% load static %}
+
+
+<section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000"><br>
+        <img src="{% static 'images/hero-bg.png' %}" class="image" style="width:1700px; height:687px; margin-left:-300px;">&nbsp; &nbsp;&nbsp;
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown" style="margin-left:180px; font-size:43px; margin-top:-650px;">Welcome to <span>Lnmiit Bus Booking Website</span></h2>
+          
+        </div>
+      </div>
+
+     
+
+     
+    </div>
+  </section><!-- End Hero -->
+
+
+
+{% endblock %}

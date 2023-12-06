@@ -1,0 +1,59 @@
+{%  extends 'accounts/main1.html' %}
+
+{% block content %}
+
+	<br>
+
+   <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="" method="post" role="form" class="php-email-form" style="width: 400px; margin-left:250px;">
+              {% csrf_token %}
+                 
+                
+              <br>
+              
+              <div class="form-group mt-3">
+                <input type="number" class="form-control" name="bus_id" id="email" placeholder="Enter Bus ID" required>
+              </div>
+          
+          
+            <br>
+            <div class="form-group mt-3">
+              <input type="time" class="form-control" name="time" id="subject" placeholder="Enter Time" required>
+            </div>
+            <br>
+            <div class="form-group mt-3">
+                <input type="text" class="form-control" name="start" id="email" placeholder="Enter Starting point" required>
+              </div>
+              <br>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="destination" id="email" placeholder="Enter destination" required>
+              </div>
+              <br>
+              <div class="form-group mt-3">
+                <input type="number" class="form-control" name="available_seats" id="email" placeholder="Available seats" required>
+              </div>
+              <br>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="day" id="email" placeholder="Enter Day" required>
+              </div>
+              <br>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="running_status" id="email" placeholder="Enter running_status" required>
+              </div>
+              <br>
+             
+            <br>     
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+{% endblock %}

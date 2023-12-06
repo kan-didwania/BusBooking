@@ -1,0 +1,60 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+<br><br>
+
+		
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                  
+                 <a href="{%url 'scheduledata' 'Monday' %}" style="border: 2px solid black; padding: 6px 6px 6px; border-radius: 5px;">Monday</a>&nbsp; &nbsp;&nbsp; &nbsp;
+                  <a href="{%url 'scheduledata' 'Tuesday' %}" style="border: 2px solid black; padding: 6px 6px 6px; border-radius: 5px;">Tuesday</a>&nbsp; &nbsp;&nbsp; &nbsp;
+                  <a href="{%url 'scheduledata' 'Wednesday' %}" style="border: 2px solid black; padding: 6px 6px 6px; border-radius: 5px;">Wednesday</a>&nbsp; &nbsp;&nbsp; &nbsp;
+                 <a href="{%url 'scheduledata' 'Thursday' %}" style="border: 2px solid black; padding: 6px 6px 6px; border-radius: 5px;">Thursday</a>&nbsp; &nbsp;&nbsp; &nbsp;
+                    <a href="{%url 'scheduledata' 'Friday' %}" style="border: 2px solid black; padding: 6px 6px 6px; border-radius: 5px;">Friday</a>&nbsp; &nbsp;&nbsp; &nbsp;
+                     <a href="{%url 'scheduledata' 'Saturday' %}" style="border: 2px solid black; padding: 6px 6px 6px; border-radius: 5px;">Saturday</a>&nbsp; &nbsp;&nbsp; &nbsp;
+                        <a href="{%url 'scheduledata' 'Sunday' %}" style="border: 2px solid black; padding: 6px 6px 6px; border-radius: 5px;">Sunday</a>&nbsp; &nbsp;&nbsp; &nbsp;
+               <br>
+                <br><br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No.</th>
+                                            <th>Time</th>
+                                            <th colspan="2">Bus of LNMIIT</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Bus No.</th>
+                                            <th>Available seats</th>
+                                        </tr>
+                                        </thead>
+                                    <tbody>
+                                        {% for p in sch %}
+                                        {%if p.running_status%}
+                                        <tr>
+                                            <td>{{p.schedule_id}}</td>
+                                            <td>{{p.time}}</td>
+                                            <td>{{p.start}}</td>
+                                            <td>{{p.destination}}</td>
+                                            <td>{{p.bus_id}}</td>
+                                            <td>{{p.available_seats}}</td>
+                                           
+                                          
+                                        </tr>
+                                        {%endif%}
+                                        {%endfor%}
+                                    </tbody>
+                                        </table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

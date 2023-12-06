@@ -1,0 +1,56 @@
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+
+  .image{
+    width:100px;
+    height:50px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <img src="{% static 'images/buslogo.png' %}" class="image">&nbsp; &nbsp;&nbsp;
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <img src="{% static 'images/home icon.png' %}" class="image" style="width:45px; height:35px; margin-left:24px;">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="nav-link" href="{% url 'admin_home'%}" style="margin-left:13px;">Home</a>
+      </li>
+      
+      <li class="nav-item active">
+        <img src="{% static 'images/bus.png' %}" class="image" style="width:45px; height:35px; margin-left:4px;">&nbsp; &nbsp;&nbsp; &nbsp;
+        <a class="nav-link" href="{% url 'bus'%}" style="margin-left:2px;">Bus</a>
+      </li>
+      <li class="nav-item active">
+        <img src="{% static 'images/driver.png' %}" class="image" style="width:45px; height:35px; margin-left:4px;">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="nav-link" href="{% url 'driver'%}" style="margin-left:-4px;">Driver
+        </a>
+      </li>
+       <li class="nav-item active">
+        <img src="{% static 'images/schedule.png' %}" class="image" style="width:45px; height:35px;  margin-left:-1px;">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="nav-link" href="{% url 'view_schedule'%}" style="margin-left:-17px;">Schedule</a>
+      </li>
+       <li class="nav-item active">
+        <img src="{% static 'images/view requests.png' %}" class="image" style="width:45px; height:35px; margin-left:-2px;">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="nav-link" href="{%url 'request'%}" style="margin-left:-18px;">Requests</a>
+      </li>
+      <li class="nav-item active">
+        <img src="{% static 'images/wallet.png' %}" class="image" style="width:45px; height:35px; margin-left:20px;">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="nav-link" href="{%url 'add_wallet'%}" style="margin-left:12px;">Wallet</a>
+      </li>
+    </ul>
+  </div>
+
+ 
+  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+
+</nav>

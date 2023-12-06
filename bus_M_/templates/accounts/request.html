@@ -1,0 +1,61 @@
+{%  extends 'accounts/main1.html' %}
+
+{% block content %}
+
+	<br><br><br>
+
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry" style="width: 1300px;">
+              <div class="entry-content">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Request_id</th>
+                            <th>User Email</th> 
+                            <th>Departure Time</th>
+                             <th>Start point</th>
+                              <th>End point</th>
+                               <th>Number of seats</th>
+                                
+                        </tr>
+                       
+                        </thead>
+                    <tbody>
+                        {% for p in allD %}
+                        <tr>
+                            <td>{{p.request_id}}</td>
+                            <td>{{p.user_email}}</td>
+                            <td>{{p.departure_time}}</td>
+                            <td>{{p.startpoint}}</td>
+                            <td>{{p.endpoint}}</td>
+                            <td>{{p.number_seats}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                       
+                        </table>
+                
+              </div>
+
+            </article><!-- End blog entry -->
+             
+             
+             <br><br>
+
+           
+
+            
+          </div><!-- End blog entries list -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+{% endblock %}

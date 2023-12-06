@@ -1,0 +1,89 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+    <div class="container-fluid p-0">
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="True">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+    </div>
+  {% endfor %}
+</ul>
+{% endif %}   
+
+		<br>
+         <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form" style="width: 1300px;">
+
+                
+                <div class="form-group mt-3">
+                  <h4 id="email">{{date}}</h4>
+                </div>
+               
+            
+              <br>
+              
+              <div class="form-group mt-3">
+                <h4 id="subject">{{curr_day}}</h4>
+              </div>
+              
+              <br>
+              <article class="entry" style="width: 1200px;">
+              <div class="entry-content">
+                 <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No.</th>
+                                            <th>Time</th>
+                                            <th colspan="2">Bus of LNMIIT</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Bus No.</th>
+                                           
+                                        </tr>
+                                        </thead>
+                                    <tbody>
+                                        {% for p in allD %}
+                                        {%if p.running_status%}
+                                        <tr>
+                                            <td>{{p.schedule_id}}</td>
+                                            <td>{{p.time}}</td>
+                                            <td>{{p.start}}</td>
+                                            <td>{{p.destination}}</td>
+                                            <td>{{p.bus_id }}</td>
+                                            <td><a type="submit" style="margin-left: 70px;" href="{% url 'booking' p.schedule_id %}">Book</a></td>
+                                        </tr>
+                                        {%endif%}
+                                        {%endfor%}
+                                    </tbody>
+                                        </table>
+                
+              </div>
+
+            </article><!-- End blog entry -->
+<br>
+               
+            </form>
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+{% endblock content %}

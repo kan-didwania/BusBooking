@@ -1,0 +1,65 @@
+{%  extends 'accounts/main1.html' %}
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+    <div class="container-fluid p-0">
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="True">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+    </div>
+  {% endfor %}
+</ul>
+{% endif %}
+	<br>
+
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="" method="post" role="form" class="php-email-form" style="width: 400px; margin-left:250px;">
+              {% csrf_token %}
+                
+                <br>
+               
+                <br>
+                <div class="form-group mt-3">
+                  <input type="number" class="form-control" name="bus_id" id="email" value="{{bus_id}}" required>
+                </div>
+            
+              <br>
+              <div class="form-group mt-3">
+                <input type="time" class="form-control" name="time" id="subject" value="{{time}}" required>
+              </div>
+              <br>
+               <div class="form-group mt-3">
+                <input type="text" class="form-control" name="start" id="subject" value="{{start}}" required>
+              </div>
+              <br>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="destination" id="subject" value="{{destination}}" required>
+              </div>
+              <br>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="running_status" id="subject" value="{{running_status}}" required>
+              </div>
+              <br>
+              
+              <br>
+              <br>
+              
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+{% endblock %}

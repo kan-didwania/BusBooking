@@ -1,0 +1,71 @@
+{%  extends 'accounts/main1.html' %}
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+    <div class="container-fluid p-0">
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="True">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+    </div>
+  {% endfor %}
+</ul>
+{% endif %}
+		<br><br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Running status</th>
+                                            <th>Time</th>
+                                            <th colspan="2">Bus of LNMIIT</th>
+                                            <th></th>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Bus No.</th>
+                                            <th>Available seats</th>
+                                            <th>Day</th>
+                                        </tr>
+                                        </thead>
+                                    <tbody>
+                                        {% for p in allD %}
+                                    
+                                        <tr>
+
+                                            <td>{{p.running_status}}</td>
+                                            <td>{{p.time}}</td>
+                                            <td>{{p.start}}</td>
+                                            <td>{{p.destination}}</td>
+                                            <td>{{p.bus_id}}</td>
+                                            <td>{{p.available_seats}}</td>
+                                            <td>{{p.day}}</td>
+                                            <td><a type="submit" style="margin-left: 70px;" href="{% url 'delete_schedule' p.schedule_id %}">Delete</a></td>
+                                            <td><a type="submit" style="margin-left: 70px;" href="{% url 'update_schedule' p.schedule_id %}">Update</a></td>
+                                        </tr>
+                                    
+                                        {%endfor%}
+                                    </tbody>
+                                        </table>
+
+                                        <br><br>
+
+				</div>
+			</div>
+            
+			
+		</div><br><br><br>
+        
+        <div class="text-center"><a type="submit" style="margin-left: 100px; border: 2px solid grey; padding: 8px 8px 8px;" href="{% url 'add_schedule' %}">Add Schedule</a>
+        </div>
+
+{% endblock content %}

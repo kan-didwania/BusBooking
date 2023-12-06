@@ -1,0 +1,46 @@
+{%  extends 'accounts/main1.html' %}
+
+{% block content %}
+
+	<br><br><br>
+
+   <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="" method="post" role="form" class="" style="width: 400px; margin-left:250px;">
+
+              {% csrf_token %}
+                
+                <br>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="name" id="email" placeholder="Name" required>
+                </div>
+            
+              <br>
+              <div class="form-group mt-3">
+                <input type="number" class="form-control" name="phone_number" id="subject" placeholder="Phone Number" required>
+              </div>
+              <br>
+              <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="licenese_number" id="email" placeholder="Licence Number" required>
+                </div>
+              <br>
+               
+              <br>
+               
+               
+               
+             
+              
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+{% endblock %}

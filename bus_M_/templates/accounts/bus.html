@@ -1,0 +1,64 @@
+{%  extends 'accounts/main1.html' %}
+
+{% block content %}
+
+	<br><br><br>
+
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry" style="width: 1300px;">
+              <div class="entry-content">
+                 <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Bus_id</th>
+                                            <th>Availability</th>
+                                            <th>Capacity</th>
+                                            <th>Driver_id</th>
+                                            <th></th>
+                                            
+                                           
+                                        </tr>
+                                        
+                                        </thead>
+                                    <tbody>
+                                        {% for p in allD %}
+                                        <tr>
+                                            <td>{{p.bus_id}}</td>
+                                            <td>{{p.availability}}</td>
+                                            <td>{{p.capacity}}</td>
+                                            <td>{{p.driver_id}}</td>
+                                            
+                                            
+                                            <td><a type="submit" style="margin-left: 70px;" href="{% url 'delete_bus' p.bus_id %}">Delete</a></td>
+                                        </tr>
+                                        {%endfor%}
+                                       
+                                    </tbody>
+                                       
+                                        </table>
+                
+              </div>
+
+            </article><!-- End blog entry --><br><br>
+             <div class="text-center"><a type="submit" style="margin-left: 400px; border: 2px solid grey; padding: 8px 8px 8px;" href="{% url 'add_bus' %}">Add Bus</a>
+             </div>
+             
+             <br><br>
+
+           
+
+            
+          </div><!-- End blog entries list -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+{% endblock %}

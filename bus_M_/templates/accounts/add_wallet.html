@@ -1,0 +1,36 @@
+{%  extends 'accounts/main1.html' %}
+
+{% block content %}
+
+	<br><br><br>
+
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="" method="post" role="form" class="php-email-form" style="width: 400px; margin-left:250px;">
+              {% csrf_token %}
+                
+              <br>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="wallet_id" id="email" placeholder="Enter User Email" required>
+              </div>
+          
+            <br>
+            <div class="form-group mt-3">
+              <input type="number" class="form-control" name="balance" id="subject" placeholder="Enter Amount" required>
+            </div>
+            <br>
+             
+            <br>
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+{% endblock %}
